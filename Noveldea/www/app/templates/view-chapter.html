@@ -1,0 +1,18 @@
+﻿<ion-view view-title="Chapter">
+    <ion-refresher on-refresh="refresh(true)" spinner="android"></ion-refresher>
+    <ion-tabs class="tabs-positive">
+        <ion-tab title="Details">
+            <ion-view>
+                <ion-content class="padding">
+                    <label class="item item-input">
+                        <span class="input-label">Title</span>
+                        <input type="text" placeholder="Ex. The Adventure" value="{{title}}"/>
+                    </label>
+                    <label class="item item-input">
+                        <textarea placeholder="Description" rows="10" ng-model="{{description}}"></textarea>
+                    </label>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>

@@ -1,0 +1,10 @@
+﻿<ion-view view-title="Chapters">
+    <ion-content class="padding">
+        <ion-refresher on-refresh="refresh(true)" spinner="android"></ion-refresher>
+        <ion-list ng-controller="chaptersListCtrl">
+            <ion-item ng-repeat="item in items" nav-clear menu-lose href="#/app/chapter/idddd">
+                Name: {{item}} 
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

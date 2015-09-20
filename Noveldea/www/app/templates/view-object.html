@@ -1,0 +1,29 @@
+﻿<ion-view view-title="Object">
+    <ion-refresher on-refresh="refresh(true)" spinner="android"></ion-refresher>
+    <ion-tabs class="tabs-positive">
+        <ion-tab title="Details">
+            <ion-view>
+                <ion-content class="padding">
+                    <label class="item item-input">
+                        <span class="input-label">Name</span>
+                        <input type="text" placeholder="Ex. Magnifier" value="{{name}}"/>
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Alia(s)</span>
+                        <input type="text" placeholder="Ex. Axe,Hammer" value="{{alias}}"/>
+                    </label>
+                    <label class="item item-input">
+                        <textarea placeholder="Description" rows="10" ng-model="{{description}}"></textarea>
+                    </label>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+        <ion-tab title="Notes">
+            <ion-view>
+                <ion-content class="padding">
+                    <textarea placeholder="Ex. Electrical tool used to murder..." rows="40" ng-model="{{goals}}"></textarea>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>

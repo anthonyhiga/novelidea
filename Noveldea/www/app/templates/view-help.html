@@ -1,79 +1,17 @@
-﻿<ion-view view-title="Character">
+﻿<ion-view view-title="Help">
     <ion-refresher on-refresh="refresh(true)" spinner="android"></ion-refresher>
     <ion-tabs class="tabs-positive">
-        <ion-tab title="Details">
+        <ion-tab title="Help">
             <ion-view>
-                <ion-content class="padding">
-                    <label class="item item-input">
-                        <span class="input-label">Short Name</span>
-                        <input type="text" placeholder="Ex. Joan" value="{{shortName}}"/>
-                    </label>
-                    <label class="item item-input">
-                        <span class="input-label">Full Name</span>
-                        <input type="text" placeholder="Ex. Joan Watson" value="{{fullName}}"/>
-                    </label>
-                    <label class="item item-input">
-                        <span class="input-label">Alia(s)</span>
-                        <input type="text" placeholder="Ex. JJ" value="{{alias}}"/>
-                    </label>
-                    <label class="item item-select">
-                        <span class="input-label">Gender</span>
-                        <select ng-model="{{gender}}">
-                            <option value="female">Female</option>
-                            <option value="male">Male</option>
-                            <option value="transgender">Transgender</option>
-                            <option value="androgyne">Androgyne</option>
-                        </select>
-                    </label>
-                    <label class="item item-select">
-                        <span class="input-label">Personality</span>
-                        <select ng-model="{{personalityType}}">
-                            <option value="intj">Architect (INTJ)</option>
-                            <option value="intp">Logician (INTP)</option>
-                            <option value="entj">Commander (ENTJ)</option>
-                            <option value="entp">Debater (ENTP)</option>
-                            <option value="infj">Advocate (INFJ)</option>
-                            <option value="infp">Mediator (INFP)</option>
-                            <option value="enfj">Protagonist (ENFJ)</option>
-                            <option value="enfp">Compaigner (ENFP)</option>
-                            <option value="istj">Logistician (ISTJ)</option>
-                            <option value="isfj">Defender (ISFJ)</option>
-                            <option value="estj">Executive (ESTJ)</option>
-                            <option value="esfj">Consul (ESFJ)</option>
-                            <option value="istp">Virtuoso (ISTP)</option>
-                            <option value="isfp">Adventurer (ISFP)</option>
-                            <option value="estp">Entrepreneur (ESTP)</option>
-                            <option value="esfp">Entertainer (ESFP)</option>
-                        </select>
-                    </label>
-                    <label class="item item-select">
-                        <span class="input-label">Role</span>
-                        <select ng-model="{{roleType}}">
-                            <option value="major">Major</option>
-                            <option value="minor">Minor</option>
-                            <option value="protagonist">Protagonist</option>
-                            <option value="antagonist">Antagonist</option>
-                            <option value="foil">Foil</option>
-                            <option value="symbolic">Symbolic</option>
-                        </select>
-                    </label>
-                    <label class="item item-input">
-                        <textarea placeholder="Description" rows="10" ng-model="{{description}}"></textarea>
-                    </label>
+                <ion-content>
+                Data is stored everywhere!!!
                 </ion-content>
             </ion-view>
         </ion-tab>
-        <ion-tab title="Biography">
+        <ion-tab title="About">
             <ion-view>
-                <ion-content class="padding">
-                    <textarea placeholder="Ex. Former sergeon, turned consulting detective and parter to the great Sherlock Holmes" rows="40" ng-model="{{biography}}"></textarea>
-                </ion-content>
-            </ion-view>
-        </ion-tab>
-        <ion-tab title="Goals">
-            <ion-view>
-                <ion-content class="padding">
-                    <textarea placeholder="Ex. Supports Sherlock Holmes" rows="40" ng-model="{{goals}}"></textarea>
+                <ion-content>
+                Created by ME!!!!
                 </ion-content>
             </ion-view>
         </ion-tab>

@@ -6,6 +6,10 @@
     .controller("appCtrl", ["$scope", function ($scope) {
     }])
 
+    .controller("helpCtrl", ["$scope", function ($scope) {
+        $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
+    }])
+
     //homeCtrl provides the logic for the home screen
     .controller("homeCtrl", ["$scope", "$state", function ($scope, $state) {
         $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };

@@ -25,6 +25,11 @@ declare var StatusBar: any;
                 templateUrl: "app/templates/view-menu.html",
                 controller: "appCtrl"
             })
+            .state("app.help", {
+                url: "/help",
+                templateUrl: "app/templates/view-help.html",
+                controller: "helpCtrl"
+            })
             .state("app.home", {
                 url: "/home",
                 templateUrl: "app/templates/view-home.html",

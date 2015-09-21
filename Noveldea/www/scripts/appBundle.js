@@ -19,6 +19,11 @@
             templateUrl: "app/templates/view-menu.html",
             controller: "appCtrl"
         })
+            .state("app.help", {
+            url: "/help",
+            templateUrl: "app/templates/view-help.html",
+            controller: "helpCtrl"
+        })
             .state("app.home", {
             url: "/home",
             templateUrl: "app/templates/view-home.html",
@@ -71,6 +76,9 @@
     "use strict";
     angular.module("myapp.controllers", [])
         .controller("appCtrl", ["$scope", function ($scope) {
+        }])
+        .controller("helpCtrl", ["$scope", function ($scope) {
+            $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
         }])
         .controller("homeCtrl", ["$scope", "$state", function ($scope, $state) {
             $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };

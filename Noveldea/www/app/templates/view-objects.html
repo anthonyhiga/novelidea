@@ -3,14 +3,17 @@
         <ion-refresher on-refresh="refresh(true)" spinner="android"></ion-refresher>
         <ion-list ng-controller="objectsListCtrl">
             <ion-item ng-repeat="item in items" nav-clear menu-lose href="#/app/object/{{item.id}}">
-                <div class="card" ng-show="{{detail}}">
+                <span class="card" ng-show="detail">
                     <div class="item item-divider">
                         {{item.name}}
                     </div>
                     <div class="item item-text-wrap">
                         {{item.description}}
                     </div>
-                </div>
+                </span>
+                <span ng-show="!detail">
+                    {{item.name}}
+                </span>
             </ion-item>
         </ion-list>
     </ion-content>
@@ -19,7 +22,7 @@
         <div class="title">
         List
         <label class="toggle">
-            <input type="checkbox" ng-model="{{detail}}">
+            <input type="checkbox" ng-model="detail">
             <div class="track">
                 <div class="handle"></div>
             </div>

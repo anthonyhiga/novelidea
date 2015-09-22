@@ -128,6 +128,8 @@
         }])
         .controller("objectsCtrl", ["$scope", "$state", function ($scope, $state) {
             $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
+            $scope.items = [];
+            $scope.detail = false;
         }])
         .controller("objectsListCtrl", ["$scope", "$state", function ($scope, $state) {
             $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };

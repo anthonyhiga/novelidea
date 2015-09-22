@@ -1,5 +1,31 @@
 {
   "changedFilesIos": [
+    "scripts\\typings\\cordova\\plugins\\MediaCapture.d.ts",
+    "scripts\\typings\\cordova\\plugins\\Media.d.ts",
+    "scripts\\typings\\cordova\\plugins\\Camera.d.ts",
+    "scripts\\typings\\cordova\\plugins\\NetworkInformation.d.ts",
+    "scripts\\typings\\cordova\\plugins\\Vibration.d.ts",
+    "scripts\\typings\\cordova-ionic\\plugins\\keyboard.d.ts",
+    "scripts\\typings\\cordova\\plugins\\BatteryStatus.d.ts",
+    "scripts\\services.ts",
+    "scripts\\typings\\cordova\\plugins\\DeviceOrientation.d.ts",
+    "scripts\\typings\\cordova\\plugins\\InAppBrowser.d.ts",
+    "scripts\\index.ts",
+    "scripts\\typings\\cordova\\plugins\\Contacts.d.ts",
+    "scripts\\typings\\cordova\\plugins\\Splashscreen.d.ts",
+    "scripts\\typings\\cordova-ionic\\cordova-ionic.d.ts",
+    "scripts\\typings\\cordova\\cordova.d.ts",
+    "scripts\\typings\\cordova\\plugins\\DeviceMotion.d.ts",
+    "scripts\\typings\\cordova\\plugins\\StatusBar.d.ts",
+    "scripts\\typings\\cordova\\plugins\\Globalization.d.ts",
+    "scripts\\typings\\cordova\\plugins\\Dialogs.d.ts",
+    "scripts\\typings\\cordova\\plugins\\Push.d.ts",
+    "scripts\\typings\\cordova\\plugins\\Device.d.ts",
+    "scripts\\typings\\cordova\\plugins\\FileTransfer.d.ts",
+    "scripts\\app.ts",
+    "scripts\\typings\\cordova\\plugins\\WebSQL.d.ts",
+    "scripts\\typings\\cordova\\plugins\\FileSystem.d.ts",
+    "scripts\\controllers.ts",
     "www\\lib\\ionic\\scss\\_refresher.scss",
     "www\\lib\\ionic\\js\\angular\\angular-animate.js",
     "www\\lib\\ionic\\js\\angular\\angular.min.js",
@@ -165,14 +191,13 @@
     "res\\screens\\android\\screen-mdpi-portrait.png",
     "www\\lib\\ionic\\scss\\_radio.scss"
   ],
-  "deletedFilesIos": [
-    "www\\app\\templates\\view-about.html"
-  ],
+  "deletedFilesIos": [],
   "addedPluginsIos": [],
   "deletedPluginsIos": [],
   "changedFiles": [
     "www\\scripts\\appBundle.js.map",
-    "www\\scripts\\appBundle.js"
+    "www\\scripts\\appBundle.js",
+    "www\\app\\templates\\view-objects.html"
   ],
   "deletedFiles": [],
   "addedPlugins": [],

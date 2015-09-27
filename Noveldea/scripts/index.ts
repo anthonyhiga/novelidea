@@ -29,6 +29,6 @@ module Noveldea {
     }
 
     window.onload = function () {
-        Application.initialize();
+        //Application.initialize();
     }
 }

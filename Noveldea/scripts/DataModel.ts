@@ -1,9 +1,6 @@
 ﻿/**
  *  DataModel
  */
-
-console.log("DATAMODEL!!!!!!!!!!!!!!!!!!!!!!!!!");
-
 export module DataModel {
     export enum Gender {
         Female,

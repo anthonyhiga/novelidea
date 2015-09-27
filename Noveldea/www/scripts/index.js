@@ -25,7 +25,7 @@ var Noveldea;
         }
     })(Application = Noveldea.Application || (Noveldea.Application = {}));
     window.onload = function () {
-        Application.initialize();
+        //Application.initialize();
     };
 })(Noveldea || (Noveldea = {}));
 //# sourceMappingURL=index.js.map

@@ -1,4 +1,4 @@
-﻿<ion-view view-title="Object">
+﻿<ion-view view-title="Prop">
     <ion-refresher on-refresh="refresh(true)" spinner="android"></ion-refresher>
     <ion-tabs class="tabs-positive">
         <ion-tab title="Details">
@@ -6,22 +6,16 @@
                 <ion-content class="padding">
                     <label class="item item-input">
                         <span class="input-label">Name</span>
-                        <input type="text" placeholder="Ex. Magnifier" value="{{name}}"/>
+                        <input type="text" value="{{entity.name}}" placeholder="Ex. Magnifier"/>
                     </label>
                     <label class="item item-input">
                         <span class="input-label">Alia(s)</span>
-                        <input type="text" placeholder="Ex. Axe,Hammer" value="{{alias}}"/>
+                        <input type="text" value="{{entity.alias}}" placeholder="Ex. Axe,Hammer"/>
                     </label>
                     <label class="item item-input">
-                        <textarea placeholder="Description" rows="10" ng-model="{{description}}"></textarea>
+                        <textarea ng-model="{{entity.description}}"
+                            placeholder="Description" rows="10"></textarea>
                     </label>
-                </ion-content>
-            </ion-view>
-        </ion-tab>
-        <ion-tab title="Notes">
-            <ion-view>
-                <ion-content class="padding">
-                    <textarea placeholder="Ex. Electrical tool used to murder..." rows="40" ng-model="{{goals}}"></textarea>
                 </ion-content>
             </ion-view>
         </ion-tab>

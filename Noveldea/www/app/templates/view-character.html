@@ -6,15 +6,15 @@
                 <ion-content class="padding">
                     <label class="item item-input">
                         <span class="input-label">Short Name</span>
-                        <input type="text" placeholder="Ex. Joan" value="{{shortName}}"/>
+                        <input type="text" placeholder="Ex. Joan" value="{{entity.shortName}}"/>
                     </label>
                     <label class="item item-input">
                         <span class="input-label">Full Name</span>
-                        <input type="text" placeholder="Ex. Joan Watson" value="{{fullName}}"/>
+                        <input type="text" placeholder="Ex. Joan Watson" value="{{entity.fullName}}"/>
                     </label>
                     <label class="item item-input">
                         <span class="input-label">Alia(s)</span>
-                        <input type="text" placeholder="Ex. JJ" value="{{alias}}"/>
+                        <input type="text" placeholder="Ex. JJ" value="{{entity.alias}}"/>
                     </label>
                     <label class="item item-select">
                         <span class="input-label">Gender</span>
@@ -27,7 +27,7 @@
                     </label>
                     <label class="item item-select">
                         <span class="input-label">Personality</span>
-                        <select ng-model="{{personalityType}}">
+                        <select ng-model="{{entity.personality}}">
                             <option value="intj">Architect (INTJ)</option>
                             <option value="intp">Logician (INTP)</option>
                             <option value="entj">Commander (ENTJ)</option>
@@ -48,7 +48,7 @@
                     </label>
                     <label class="item item-select">
                         <span class="input-label">Role</span>
-                        <select ng-model="{{roleType}}">
+                        <select ng-model="{{entity.role}}">
                             <option value="major">Major</option>
                             <option value="minor">Minor</option>
                             <option value="protagonist">Protagonist</option>
@@ -58,7 +58,8 @@
                         </select>
                     </label>
                     <label class="item item-input">
-                        <textarea placeholder="Description" rows="10" ng-model="{{description}}"></textarea>
+                        <textarea ng-model="{{entity.description}}"
+                            placeholder="Description" rows="10"></textarea>
                     </label>
                 </ion-content>
             </ion-view>
@@ -66,14 +67,16 @@
         <ion-tab title="Biography">
             <ion-view>
                 <ion-content class="padding">
-                    <textarea placeholder="Ex. Former sergeon, turned consulting detective and parter to the great Sherlock Holmes" rows="40" ng-model="{{biography}}"></textarea>
+                    <textarea ng-model="{{entity.biography}}"
+                      placeholder="Ex. Former sergeon, turned consulting detective and parter to the great Sherlock Holmes" rows="40"></textarea>
                 </ion-content>
             </ion-view>
         </ion-tab>
         <ion-tab title="Goals">
             <ion-view>
                 <ion-content class="padding">
-                    <textarea placeholder="Ex. Supports Sherlock Holmes" rows="40" ng-model="{{goals}}"></textarea>
+                    <textarea ng-model="{{entity.goals}}"
+                        placeholder="Ex. Supports Sherlock Holmes" rows="40"></textarea>
                 </ion-content>
             </ion-view>
         </ion-tab>

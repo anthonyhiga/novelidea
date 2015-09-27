@@ -1,88 +1,110 @@
-﻿(function () {
-    "use strict";
+﻿import dm = require("./DataModel");
+var dataModel = dm.DataModel;
+declare var angular;
 
-    angular.module("myapp.controllers", [])
+console.log("RUNNING!!!!!!!!!!!!!!!!!!!!!!!!!");
 
-    .controller("appCtrl", ["$scope", function ($scope) {
+angular.module("myapp.controllers", []) 
+    .controller("appCtrl", ["$scope", ($scope) => {
+        $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
     }])
 
-    .controller("helpCtrl", ["$scope", function ($scope) {
-        $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
+    .controller("helpCtrl", ["$scope", ($scope) => {
+        $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
     }])
 
     //homeCtrl provides the logic for the home screen
-    .controller("homeCtrl", ["$scope", "$state", function ($scope, $state) {
-        $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-
-        $scope.projects = [{
-            id: 'ASDFWSESASDF',
-            name: 'Sherlock Holmes',
-        }];
+    .controller("homeCtrl", ["$scope", "$state", ($scope, $state) => {
+        $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
     }])
 
     // Chapters Controllers
-    .controller("chapterCtrl", ["$scope", "$state", "$stateParams", function ($scope, $state, $stateParams) {
-        $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-        $scope.shortName = "ShortName";
-        $scope.fullName = "FullName";
+    .controller("chapterCtrl", ["$scope", "$state", "$stateParams", ($scope, $state, $stateParams) => { 
+        $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
+        // Test Entity
+
+        $scope.entity = new dataModel.Chapter();
     }])
-    .controller("chaptersCtrl", ["$scope", "$state", function ($scope, $state) {
-        $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
+    .controller("chaptersCtrl", ["$scope", "$state", ($scope, $state) => {
+        $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
     }])
-    .controller("chaptersListCtrl", ["$scope", "$state", function ($scope, $state) {
-        $scope.items = ['Sherlock', 'Watson', 'Bell'];
+    .controller("chaptersListCtrl", ["$scope", "$state", ($scope, $state) => {
+        $scope.items = [];
+
+        // Test Entity
+        $scope.items.push(new dataModel.Chapter());
     }])
 
     // Characters Controllers
     .controller("characterCtrl", ["$scope", "$state", "$stateParams", function ($scope, $state, $stateParams) {
         $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-        $scope.shortName = "ShortName";
-        $scope.fullName = "FullName";
+
+        // Test Entity
+        $scope.entity = new dataModel.Character();
     }])
     .controller("charactersCtrl", ["$scope", "$state", function ($scope, $state) {
         $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
     }])
     .controller("charactersListCtrl", ["$scope", "$state", function ($scope, $state) {
-        $scope.items = ['Sherlock', 'Watson', 'Bell'];
+        $scope.items = [];
+
+        // Test Entity
+        $scope.items.push(new dataModel.Character());
     }])
 
     // Notes Controllers
     .controller("noteCtrl", ["$scope", "$state", "$stateParams", function ($scope, $state, $stateParams) {
         $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-        $scope.shortName = "ShortName";
-        $scope.fullName = "FullName";
+
+        // Test Entity
+        $scope.entity = new dataModel.Note();
     }])
     .controller("notesCtrl", ["$scope", "$state", function ($scope, $state) {
         $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
     }])
     .controller("notesListCtrl", ["$scope", "$state", function ($scope, $state) {
+        $scope.items = [];
+
+        // Test Entity
+        $scope.items.push(new dataModel.Note());
+    }])
+
+    // Scene Controllers
+    .controller("sceneCtrl", ["$scope", "$state", "$stateParams", function ($scope, $state, $stateParams) {
         $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-        $scope.items = ['Sherlock', 'Watson', 'Bell'];
+
+        // Test Entity
+        $scope.entity = new dataModel.Scene();
+    }])
+    .controller("scenesCtrl", ["$scope", "$state", function ($scope, $state) {
+        $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
+    }])
+    .controller("scenesListCtrl", ["$scope", "$state", function ($scope, $state) {
+        $scope.items = [];
+
+        // Test Entity
+        $scope.items.push(new dataModel.Scene());
     }])
 
     // Objects Controllers
-    .controller("objectCtrl", ["$scope", "$state", "$stateParams", function ($scope, $state, $stateParams) {
+    .controller("propCtrl", ["$scope", "$state", "$stateParams", function ($scope, $state, $stateParams) {
         $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-        $scope.shortName = "ShortName";
-        $scope.fullName = "FullName";
+
+        // Test Entity
+        $scope.entity = new dataModel.Prop();
     }])
-    .controller("objectsCtrl", ["$scope", "$state", function ($scope, $state) {
+    .controller("propCtrl", ["$scope", "$state", function ($scope, $state) {
         $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
         $scope.items = []; 
+
         $scope.detail = false;
     }])
-    .controller("objectsListCtrl", ["$scope", "$state", function ($scope, $state) {
+    .controller("propsListCtrl", ["$scope", "$state", function ($scope, $state) {
         $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-        $scope.items = [
-            {
-                name: 'Death Hammer',
-                description: 'Superpowerful hammer'
-            },
-            {
-                name: 'Mythril Crystal',
-                description: 'Object of great power'
-            },
-        ];
+        $scope.items = [];
+
+        // Test Entity
+        $scope.items.push(new dataModel.Prop());
     }])
 
     //errorCtrl managed the display of error messages bubbled up from other controllers, directives, myappService
@@ -110,4 +132,3 @@
             $scope.$apply();
         });
     }]);
-})();

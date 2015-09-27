@@ -2,8 +2,8 @@
     <ion-content class="padding">
         <ion-refresher on-refresh="refresh(true)" spinner="android"></ion-refresher>
         <ion-list ng-controller="notesListCtrl">
-            <ion-item ng-repeat="item in items" nav-clear menu-lose href="#/app/note/idddd">
-                Name: {{item}} 
+            <ion-item ng-repeat="item in items" nav-clear menu-lose href="#/app/note/{item.id}">
+                {{item.id}} 
             </ion-item>
         </ion-list>
     </ion-content>

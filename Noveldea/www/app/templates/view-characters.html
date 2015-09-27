@@ -2,9 +2,33 @@
     <ion-content class="padding">
         <ion-refresher on-refresh="refresh(true)" spinner="android"></ion-refresher>
         <ion-list ng-controller="charactersListCtrl">
-            <ion-item ng-repeat="item in items" nav-clear menu-lose href="#/app/character/idddd">
-                Name: {{item}} 
+            <ion-item ng-repeat="item in items" nav-clear menu-lose href="#/app/character/{{item.id}}">
+                <span class="card" ng-show="detail">
+                    <div class="item item-divider">
+                        {{item.fullName}} 
+                    </div>
+                    <div class="item item-text-wrap">
+                        {{item.role}}
+                    </div>
+                </span>
+                <span ng-show="!detail">
+                    {{item.fullName}}
+                </span>
             </ion-item>
         </ion-list>
     </ion-content>
+
+
+    <div class="bar bar-footer bar-positive">
+        <div class="title">
+            List
+            <label class="toggle">
+                <input type="checkbox" ng-model="detail">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+            </label>
+            Cards
+        </div>
+    </div>
 </ion-view>

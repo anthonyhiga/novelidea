@@ -1,10 +1,10 @@
-﻿<ion-view view-title="Character">
+﻿<ion-view view-title="Note">
     <ion-refresher on-refresh="refresh(true)" spinner="android"></ion-refresher>
     <ion-tabs class="tabs-positive">
         <ion-tab title="Note">
             <ion-view>
                 <ion-content class="padding">
-                    <textarea placeholder="Ex. Notes" rows="40" ng-model="{{biography}}"></textarea>
+                    <textarea placeholder="Ex. Notes" rows="40" ng-model="{{entity.prose}}"></textarea>
                 </ion-content>
             </ion-view>
         </ion-tab>

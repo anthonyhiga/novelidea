@@ -1,8 +1,8 @@
-﻿<ion-view view-title="Objects">
+﻿<ion-view view-title="Props">
     <ion-content class="padding">
         <ion-refresher on-refresh="refresh(true)" spinner="android"></ion-refresher>
-        <ion-list ng-controller="objectsListCtrl">
-            <ion-item ng-repeat="item in items" nav-clear menu-lose href="#/app/object/{{item.id}}">
+        <ion-list ng-controller="propsListCtrl">
+            <ion-item ng-repeat="item in items" nav-clear menu-lose href="#/app/prop/{{item.id}}">
                 <span class="card" ng-show="detail">
                     <div class="item item-divider">
                         {{item.name}}

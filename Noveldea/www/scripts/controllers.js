@@ -1,8 +1,11 @@
-define(["require", "exports", "./DataModel"], function (require, exports, dm) {
+define(["require", "exports", "./DataModel", "./ExampleData", "./Provider"], function (require, exports, dm, ed, p) {
     var dataModel = dm.DataModel;
+    var exampleData = ed.ExampleData;
+    var provider = p.Provider;
     var controllers;
     (function (controllers) {
         console.log("Loading Controllers");
+        provider.initialize();
         angular.module("myapp.controllers", [])
             .controller("appCtrl", ["$scope", function ($scope) {
                 $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
@@ -16,15 +19,13 @@ define(["require", "exports", "./DataModel"], function (require, exports, dm) {
             .controller("chapterCtrl", ["$scope", "$state", "$stateParams", function ($scope, $state, $stateParams) {
                 $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
                 // Test Entity
-                $scope.entity = new dataModel.Chapter();
+                $scope.entity = provider.ChapterProvider.singleton.get($stateParams.id);
             }])
             .controller("chaptersCtrl", ["$scope", "$state", function ($scope, $state) {
                 $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
             }])
             .controller("chaptersListCtrl", ["$scope", "$state", function ($scope, $state) {
-                $scope.items = [];
-                // Test Entity
-                $scope.items.push(new dataModel.Chapter());
+                $scope.items = provider.ChapterProvider.singleton.list("", true);
             }])
             .controller("characterCtrl", ["$scope", "$state", "$stateParams", function ($scope, $state, $stateParams) {
                 $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };

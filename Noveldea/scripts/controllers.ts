@@ -1,9 +1,18 @@
-﻿import dm = require("./DataModel");
+﻿/**
+ *  Copyright: Third Party Software 2015(c)
+ */
+
+import dm = require("./DataModel");
 var dataModel = dm.DataModel;
+import ed = require("./ExampleData");
+var exampleData = ed.ExampleData;
+import p = require("./Provider");
+var provider = p.Provider;
 declare var angular;
 
 export module controllers {
     console.log("Loading Controllers");
+    provider.initialize();
 
     angular.module("myapp.controllers", [])
         .controller("appCtrl", ["$scope", ($scope) => {
@@ -19,21 +28,18 @@ export module controllers {
             $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
         }])
 
-    // Chapters Controllers
+    // chapters Controllers
         .controller("chapterCtrl", ["$scope", "$state", "$stateParams", ($scope, $state, $stateParams) => {
             $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
             // Test Entity
 
-            $scope.entity = new dataModel.Chapter();
+            $scope.entity = provider.ChapterProvider.singleton.get($stateParams.id);
         }])
         .controller("chaptersCtrl", ["$scope", "$state", ($scope, $state) => {
             $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
         }])
         .controller("chaptersListCtrl", ["$scope", "$state", ($scope, $state) => {
-            $scope.items = [];
-
-            // Test Entity
-            $scope.items.push(new dataModel.Chapter());
+            $scope.items = provider.ChapterProvider.singleton.list("", true);
         }])
 
     // Characters Controllers

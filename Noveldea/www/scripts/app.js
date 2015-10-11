@@ -72,6 +72,16 @@ define(["require", "exports", "./controllers", "./services"], function (require,
                 url: "/prop/:id",
                 templateUrl: "app/templates/view-prop.html",
                 controller: "propCtrl"
+            })
+                .state("app.scenes", {
+                url: "/scenes",
+                templateUrl: "app/templates/view-scenes.html",
+                controller: "scenesCtrl"
+            })
+                .state("app.scene", {
+                url: "/scene/:id",
+                templateUrl: "app/templates/view-scene.html",
+                controller: "sceneCtrl"
             });
             $urlRouterProvider.otherwise("/app/home");
         });

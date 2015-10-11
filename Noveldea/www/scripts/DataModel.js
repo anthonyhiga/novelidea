@@ -46,12 +46,60 @@ define(["require", "exports"], function (require, exports) {
             Role[Role["Symbolic"] = 5] = "Symbolic";
         })(DataModel.Role || (DataModel.Role = {}));
         var Role = DataModel.Role;
+        var EntityBuilder = (function () {
+            function EntityBuilder() {
+            }
+            EntityBuilder.prototype.id = function (value) {
+                this._id = value;
+                return this;
+            };
+            EntityBuilder.prototype.construct = function () {
+                return null;
+            };
+            EntityBuilder.prototype.build = function () {
+                var entity = this.construct();
+                if (this._id) {
+                    entity.id = this._id;
+                }
+                else {
+                    entity.id = guid();
+                }
+                return entity;
+            };
+            return EntityBuilder;
+        })();
+        DataModel.EntityBuilder = EntityBuilder;
         var Entity = (function () {
             function Entity() {
             }
             return Entity;
         })();
         DataModel.Entity = Entity;
+        var ChapterBuilder = (function (_super) {
+            __extends(ChapterBuilder, _super);
+            function ChapterBuilder() {
+                _super.apply(this, arguments);
+            }
+            ChapterBuilder.prototype.title = function (value) {
+                this._title = value;
+                return this;
+            };
+            ChapterBuilder.prototype.description = function (value) {
+                this._description = value;
+                return this;
+            };
+            ChapterBuilder.prototype.construct = function () {
+                return new Chapter();
+            };
+            ChapterBuilder.prototype.build = function () {
+                var chapter = _super.prototype.build.call(this);
+                chapter.title = this._title;
+                chapter.description = this._description;
+                return chapter;
+            };
+            return ChapterBuilder;
+        })(EntityBuilder);
+        DataModel.ChapterBuilder = ChapterBuilder;
         var Chapter = (function (_super) {
             __extends(Chapter, _super);
             function Chapter() {
@@ -92,6 +140,15 @@ define(["require", "exports"], function (require, exports) {
             return Scene;
         })(Entity);
         DataModel.Scene = Scene;
+        function guid() {
+            function s4() {
+                return Math.floor((1 + Math.random()) * 0x10000)
+                    .toString(16)
+                    .substring(1);
+            }
+            return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                s4() + '-' + s4() + s4() + s4();
+        }
     })(DataModel = exports.DataModel || (exports.DataModel = {}));
 });
 //# sourceMappingURL=DataModel.js.map

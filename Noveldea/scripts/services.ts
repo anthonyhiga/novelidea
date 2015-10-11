@@ -1,5 +1,8 @@
-﻿declare var $: any;
+﻿/**
+ *  Copyright: Third Party Software 2015(c)
+ */
 
+declare var $: any;
 declare var angular;
 
 export module services {

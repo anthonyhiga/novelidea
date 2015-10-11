@@ -1,4 +1,7 @@
-﻿import c = require("./controllers");
+﻿/**
+ *  Copyright: Third Party Software 2015(c)
+ */
+import c = require("./controllers");
 var controllers = c.controllers;
 import s = require("./services");
 var services = s.services;
@@ -77,6 +80,16 @@ export module app {
                     url: "/prop/:id",
                     templateUrl: "app/templates/view-prop.html",
                     controller: "propCtrl"
+                })
+                .state("app.scenes", {
+                    url: "/scenes",
+                    templateUrl: "app/templates/view-scenes.html",
+                    controller: "scenesCtrl"
+                })
+                .state("app.scene", {
+                    url: "/scene/:id",
+                    templateUrl: "app/templates/view-scene.html",
+                    controller: "sceneCtrl"
                 });
             $urlRouterProvider.otherwise("/app/home");
         });

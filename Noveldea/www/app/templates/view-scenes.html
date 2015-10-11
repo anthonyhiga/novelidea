@@ -1,7 +1,7 @@
-﻿<ion-view view-title="Characters">
+﻿<ion-view view-title="Scenes">
     <ion-content class="padding">
         <ion-refresher on-refresh="refresh(true)" spinner="android"></ion-refresher>
-        <ion-list ng-controller="charactersListCtrl">
+        <ion-list ng-controller="scenesListCtrl">
             <ion-item ng-repeat="item in items" nav-clear menu-lose href="#/app/scene/{{item.id}}">
                 {{item.title}} 
             </ion-item>

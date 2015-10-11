@@ -1,7 +1,6 @@
-// For an introduction to the Blank template, see the following documentation:
-// http://go.microsoft.com/fwlink/?LinkID=397705
-// To debug code on page load in Ripple or on Android devices/emulators: launch your app, set breakpoints, 
-// and then run "window.location.reload()" in the JavaScript Console.
+/**
+ *  Copyright: Third Party Software 2015(c)
+ */
 var Noveldea;
 (function (Noveldea) {
     "use strict";

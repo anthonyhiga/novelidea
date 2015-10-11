@@ -14,29 +14,32 @@ export module controllers {
     console.log("Loading Controllers");
     provider.initialize();
 
+    function init($scope) {
+        $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
+    }
+
     angular.module("myapp.controllers", [])
         .controller("appCtrl", ["$scope", ($scope) => {
-            $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
+            init($scope);
         }])
 
         .controller("helpCtrl", ["$scope", ($scope) => {
-            $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
+            init($scope);
         }])
 
     //homeCtrl provides the logic for the home screen
         .controller("homeCtrl", ["$scope", "$state", ($scope, $state) => {
-            $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
+            init($scope);
         }])
 
     // chapters Controllers
         .controller("chapterCtrl", ["$scope", "$state", "$stateParams", ($scope, $state, $stateParams) => {
-            $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
-            // Test Entity
-
+            init($scope);
             $scope.entity = provider.ChapterProvider.singleton.get($stateParams.id);
         }])
         .controller("chaptersCtrl", ["$scope", "$state", ($scope, $state) => {
-            $scope.refresh = () => { $scope.$broadcast("scroll.refreshComplete"); };
+            init($scope);
+            $scope.detail = false;
         }])
         .controller("chaptersListCtrl", ["$scope", "$state", ($scope, $state) => {
             $scope.items = provider.ChapterProvider.singleton.list("", true);
@@ -44,74 +47,54 @@ export module controllers {
 
     // Characters Controllers
         .controller("characterCtrl", ["$scope", "$state", "$stateParams", function ($scope, $state, $stateParams) {
-            $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-
-            // Test Entity
-            $scope.entity = new dataModel.Character();
+            init($scope);
+            $scope.entity = provider.CharacterProvider.singleton.get($stateParams.id);
         }])
         .controller("charactersCtrl", ["$scope", "$state", function ($scope, $state) {
-            $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
+            init($scope);
+            $scope.detail = false;
         }])
         .controller("charactersListCtrl", ["$scope", "$state", function ($scope, $state) {
-            $scope.items = [];
-
-            // Test Entity
-            $scope.items.push(new dataModel.Character());
+            $scope.items = provider.CharacterProvider.singleton.list("", true);
         }])
 
     // Notes Controllers
         .controller("noteCtrl", ["$scope", "$state", "$stateParams", function ($scope, $state, $stateParams) {
-            $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-
-            // Test Entity
-            $scope.entity = new dataModel.Note();
+            init($scope);
+            $scope.entity = provider.NoteProvider.singleton.get($stateParams.id);
         }])
         .controller("notesCtrl", ["$scope", "$state", function ($scope, $state) {
-            $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
+            init($scope);
+            $scope.detail = false;
         }])
         .controller("notesListCtrl", ["$scope", "$state", function ($scope, $state) {
-            $scope.items = [];
-
-            // Test Entity
-            $scope.items.push(new dataModel.Note());
+            $scope.items = provider.NoteProvider.singleton.list("", true);
         }])
 
     // Scene Controllers
         .controller("sceneCtrl", ["$scope", "$state", "$stateParams", function ($scope, $state, $stateParams) {
-            $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-
-            // Test Entity
-            $scope.entity = new dataModel.Scene();
+            init($scope);
+            $scope.entity = provider.SceneProvider.singleton.get($stateParams.id);
         }])
         .controller("scenesCtrl", ["$scope", "$state", function ($scope, $state) {
-            $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
+            init($scope);
+            $scope.detail = false;
         }])
         .controller("scenesListCtrl", ["$scope", "$state", function ($scope, $state) {
-            $scope.items = [];
-
-            // Test Entity
-            $scope.items.push(new dataModel.Scene());
+            $scope.items = provider.SceneProvider.singleton.list("", true);
         }])
 
     // Prop Controllers
         .controller("propCtrl", ["$scope", "$state", "$stateParams", function ($scope, $state, $stateParams) {
-            $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-
-            // Test Entity
-            $scope.entity = new dataModel.Prop();
+            init($scope);
+            $scope.entity = provider.PropProvider.singleton.get($stateParams.id);
         }])
         .controller("propsCtrl", ["$scope", "$state", function ($scope, $state) {
-            $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-            $scope.items = [];
-
+            init($scope);
             $scope.detail = false;
         }])
         .controller("propsListCtrl", ["$scope", "$state", function ($scope, $state) {
-            $scope.refresh = function () { $scope.$broadcast("scroll.refreshComplete"); };
-            $scope.items = [];
-
-            // Test Entity
-            $scope.items.push(new dataModel.Prop());
+            $scope.items = provider.PropProvider.singleton.list("", true);
         }])
 
     //errorCtrl managed the display of error messages bubbled up from other controllers, directives, myappService

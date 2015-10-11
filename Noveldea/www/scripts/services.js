@@ -1,3 +1,6 @@
+/**
+ *  Copyright: Third Party Software 2015(c)
+ */
 define(["require", "exports"], function (require, exports) {
     var services;
     (function (services) {

@@ -1,6 +1,3 @@
-/**
- *  ExampleData
- */
 define(["require", "exports", "./DataModel"], function (require, exports, dm) {
     var ExampleData;
     (function (ExampleData) {
